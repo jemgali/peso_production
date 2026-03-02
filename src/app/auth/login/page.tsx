@@ -1,9 +1,11 @@
 import { LoginForm } from "@/components/login-form";
+import Header from "@/components/public/header";
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-      <div className="w-full max-w-sm">
+    <div className="min-h-svh w-full">
+      <Header />
+      <div className="w-full max-w-2xl mx-auto py-10">
         <LoginForm />
       </div>
     </div>

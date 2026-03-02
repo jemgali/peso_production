@@ -1,20 +1,15 @@
-"use client";
+'use client'
 
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { GoogleLoginButton } from "./google-login-button";
 
 export function LoginForm({
   className,
@@ -48,63 +43,58 @@ export function LoginForm({
   };
 
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
-          <CardDescription>
-            Enter your email below to login to your account
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleLogin}>
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <Link
-                    href="/auth/forgot-password"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                  >
-                    Forgot your password?
-                  </Link>
-                </div>
-                <Input
-                  id="password"
-                  type="password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-              {error && <p className="text-sm text-red-500">{error}</p>}
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Logging in..." : "Login"}
-              </Button>
+    <main className="flex items-center justify-center">
+      <div className="h-110 w-full rounded-lg border bg-primary/60 shadow-md flex">
+        <div className="flex items-center justify-center bg-white p-6">
+          <Image
+            src="/assets/peso_logo.png"
+            alt="Logo"
+            width={300}
+            height={300}
+            className="mb-4"
+          />
+        </div>
+        <form onSubmit={handleLogin} className={cn("w-full max-w-sm space-y-4 p-6", className)} {...props} >
+          <h1 className="text-2xl font-bold">LOGIN FORM</h1>
+          <div className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="name@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={cn("bg-white", className)}
+              required
+            />
+          </div>
+          <div className="space-y-2">
+            <div className="flex items-center justify-between mb-0.5">
+              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password" className="text-sm text-gray-500">
+                <Link href="/forgot-password" className="text-blue-700 hover:underline">
+                  Forgot password?
+                </Link>
+              </Label>
             </div>
-            <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
-              <Link
-                href="/auth/sign-up"
-                className="underline underline-offset-4"
-              >
-                Sign up
-              </Link>
-            </div>
-          </form>
-        </CardContent>
-      </Card>
-    </div>
+            <Input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className={cn("bg-white", className)}
+              required
+            />
+          </div>
+          {error && (
+            <p className="text-sm text-red-500">{error}</p>
+          )}
+          <Button type="submit" className="w-full" disabled={isLoading}>
+            {isLoading ? "Logging in..." : "Login"}
+          </Button>
+          <GoogleLoginButton />
+        </form>
+      </div>
+    </main>
   );
 }
