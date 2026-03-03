@@ -17,7 +17,7 @@ export function GoogleLoginButton() {
         options: {
           // Make sure you have this callback route set up in your app
           // to handle the server-side session exchange
-          redirectTo: `${window.location.origin}/auth/callback`,
+          redirectTo: `${window.location.origin}/auth/confirm`,
         },
       });
 
@@ -64,6 +64,7 @@ export function GoogleLoginButton() {
           <path d="M1 1h22v22H1z" fill="none" />
         </svg>
       )}
+      <span>Sign in with Google</span>
     </Button>
   );
 }

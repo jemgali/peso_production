@@ -14,7 +14,6 @@ const Header = () => {
         if (pathname.startsWith('/home#about')) return 'about'
         if (pathname.startsWith('/home#programs')) return 'programs'
         if (pathname.startsWith('/auth/login')) return 'login'
-        return 'home'
     }
 
   return (
