@@ -56,7 +56,7 @@ export function LoginForm({
           router.push("/protected/employee");
           break;
         default:
-          router.push("/protected/client");
+          router.push("/home");
       }
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");

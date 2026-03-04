@@ -42,7 +42,7 @@ export async function GET(request: NextRequest) {
           redirect("/protected/employee");
           break;
         default:
-          redirect("/protected/client");
+          redirect("/home");
           break;
       }
     } else {

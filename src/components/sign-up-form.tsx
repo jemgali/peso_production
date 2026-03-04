@@ -66,7 +66,7 @@ export function SignUpForm({
         email: validationResult.data.email,
         password: validationResult.data.password,
         options: {
-          emailRedirectTo: `${window.location.origin}/protected/client`,
+          emailRedirectTo: `${window.location.origin}/home`,
           data: {
             user_first_name: validationResult.data.firstName,
             user_middle_name: validationResult.data.middleName,
