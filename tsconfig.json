@@ -23,6 +23,9 @@
       "@/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],
       "@/ui/*": ["./src/components/ui/*"],
+      "@/protected-components/*": ["./src/components/protected-components/*"],
+      "@/forms/*": [ "./src/components/protected-components/forms/*"],
+      "@/actions/*": ["./src/components/protected-components/actions/*"],
     }
   },
   "include": [
@@ -34,3 +37,4 @@
   ],
   "exclude": ["node_modules"]
 }
+  

@@ -3,9 +3,9 @@ import HomePage from './home/page'
 
 const RootPage = () => {
   return (
-    <main>
+    <>
       <HomePage />
-    </main>
+    </>
   )
 }
 

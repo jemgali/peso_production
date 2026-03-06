@@ -7,7 +7,7 @@ import {
 
 const ContactSection = () => {
   return (
-    <section className="bg-gray-50 container mx-auto px-4 py-8">
+    <section id="contact" className="bg-gray-50 container mx-auto px-4 py-8">
         <h2 className="text-2xl font-bold mb-10 text-center">Contact Us</h2>
         <div className="flex items-between gap-8">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.2161189136814!2d120.59154979536166!3d16.413846711221655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a166070e9525%3A0xc78e3cc0941138ed!2sBaguio%20City%20Hall!5e0!3m2!1sen!2sph!4v1772603284941!5m2!1sen!2sph" width={400} height={300} style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
